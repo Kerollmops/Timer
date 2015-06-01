@@ -6,7 +6,7 @@
 #    By: crenault <crenault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/06/01 12:08:28 by crenault          #+#    #+#              #
-#    Updated: 2015/06/01 12:10:39 by crenault         ###   ########.fr        #
+#    Updated: 2015/06/01 15:05:50 by crenault         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ BIN_FLAGS = $(FLAGS) $(FT_FLAGS)
 NAME = libtimer.a
 
 # to compile files
-SRC = Timer.cpp
+SRC = src/Timer.cpp
 # header files
 HDR = include/Timer.hpp
 # objects files

@@ -6,11 +6,11 @@
 /*   By: crenault <crenault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/10 15:33:18 by crenault          #+#    #+#             */
-/*   Updated: 2015/06/01 12:06:51 by crenault         ###   ########.fr       */
+/*   Updated: 2015/06/01 15:07:29 by crenault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Timer.hpp"
+#include "../include/Timer.hpp"
 
 Timer::Timer()
 	: _startMark(0), _stopMark(0), _pausedMark(0),
