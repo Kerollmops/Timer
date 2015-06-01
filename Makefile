@@ -6,7 +6,7 @@
 #    By: crenault <crenault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/06/01 12:08:28 by crenault          #+#    #+#              #
-#    Updated: 2015/06/01 18:43:15 by crenault         ###   ########.fr        #
+#    Updated: 2015/06/01 18:47:44 by crenault         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,9 @@ TIMER_FLAGS = -L$(TIMER_FOLD) -ltimer
 
 # submodules
 SUBMODULES =
+
+# libraries
+LIBRARIES =
 
 # compiler
 CC = clang++
