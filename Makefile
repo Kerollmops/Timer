@@ -6,9 +6,14 @@
 #    By: crenault <crenault@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/06/01 12:08:28 by crenault          #+#    #+#              #
-#    Updated: 2015/06/01 15:05:50 by crenault         ###   ########.fr        #
+#    Updated: 2015/06/01 18:43:15 by crenault         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+# Timer
+TIMER_FOLD = .
+TIMER_LIB = $(TIMER_FOLD)/libtimer.a
+TIMER_FLAGS = -L$(TIMER_FOLD) -ltimer
 
 # submodules
 SUBMODULES =
@@ -22,7 +27,7 @@ FLAGS = -Wall -Wextra -Werror
 FLAGS += -std=c++1y -stdlib=libc++
 FLAGS += -O3
 # binary flags (add libraries)
-BIN_FLAGS = $(FLAGS) $(FT_FLAGS)
+BIN_FLAGS = $(FLAGS) $(TIMER_FLAGS)
 # executable
 NAME = libtimer.a
 
@@ -33,6 +38,13 @@ HDR = include/Timer.hpp
 # objects files
 OBJS = $(SRC:.$(FT)=.o)
 
+# tests to compile files
+SRC_TEST = src/main.cpp
+# header files
+HDR_TEST =
+# objects files
+OBJS_TEST = $(SRC_TEST:.$(FT)=.o)
+
 # main rule
 all: $(NAME)
 
@@ -42,10 +54,17 @@ re: fclean $(NAME)
 # reclone submodule and rebuild
 rere: ffclean $(NAME)
 
+# compile lib
 $(NAME): $(SUBMODULES) $(OBJS)
 	@ar rc $@ $(OBJS)
 	@ranlib $@
 	@echo $@ "updated!"
+
+# compile test bin
+test: $(NAME) $(OBJS_TEST)
+	@$(CC) -o $@ $(OBJS_TEST) $(BIN_FLAGS)
+	@echo $@ "updated!"
+	@echo "Now, you can launch" $@ "!"
 
 # making o files
 %.o: %.$(FT) $(HDR)
